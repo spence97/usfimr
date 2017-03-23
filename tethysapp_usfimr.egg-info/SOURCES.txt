@@ -1,0 +1,14 @@
+setup.py
+tethysapp/__init__.py
+tethysapp/usfimr/__init__.py
+tethysapp/usfimr/app.py
+tethysapp/usfimr/controllers.py
+tethysapp/usfimr/handoff.py
+tethysapp/usfimr/init_stores.py
+tethysapp/usfimr/model.py
+tethysapp_usfimr.egg-info/PKG-INFO
+tethysapp_usfimr.egg-info/SOURCES.txt
+tethysapp_usfimr.egg-info/dependency_links.txt
+tethysapp_usfimr.egg-info/namespace_packages.txt
+tethysapp_usfimr.egg-info/not-zip-safe
+tethysapp_usfimr.egg-info/top_level.txt

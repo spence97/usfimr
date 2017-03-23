@@ -1,0 +1,156 @@
+{% extends "usfimr/base.html" %}
+{% load staticfiles %}
+{% block scripts %}
+  {{ block.super }}
+   <link rel="stylesheet" href="https://openlayers.org/en/v3.2.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 750px;
+        width: 100%;
+      }
+    </style>
+  <script src="https://openlayers.org/en/v3.2.1/build/ol.js" type="text/javascript"></script>
+  <script src="{% static 'usfimr/js/main.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block app_navigation_items %}
+<li><h5><a href="{% url 'usfimr:info' %}" style="background-color=#800000">About the App</a></h5></li>
+
+    <button name="execute" id="zoomfull" class="btn btn-default btn-primary" type='submit'
+                onclick="app.gogolayer('zoomfull');">Zoom to Full Extent</button>
+
+<br>
+<br>
+
+
+    <button name="execute" id="zoomFLAL" class="btn btn-default btn-danger" type='submit'
+                onclick="app.gogolayer('zoomFLAL');">Zoom to Alabama/Florida Floods</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="1" checked onclick = "showhidelayer(1)" >
+        Choctawhatchee River (Bellwood,AL)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="2" checked onclick = "showhidelayer(2)">
+        Holmes Creek (Vernon,FL)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="3" checked onclick = "showhidelayer(3)">
+        Pea River (Samson,AL)
+      </label>
+    </div>
+
+<br>
+
+    <button name="execute" id="zoomTX" class="btn btn-default btn-danger" type='submit'
+                onclick="app.gogolayer('zoomTX');">Zoom to Texas Floods</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="4" checked onclick = "showhidelayer(4)">
+        Brazos River (Hempstead,TX)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="8" checked onclick = "showhidelayer(8)">
+        Brazos River (Richmond,TX)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="5" checked onclick = "showhidelayer(5)">
+        Spring Creek (Tomball,TX)
+      </label>
+    </div>
+  <div class="checkbox">
+      <label>
+        <input type="checkbox" id="6" checked onclick = "showhidelayer(6)">
+        Willow Creek (Tomball,TX)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="9" checked onclick = "showhidelayer(9)">
+        San Jacinto River (Porter,TX)
+      </label>
+    </div>
+
+<br>
+
+    <button name="execute" id="zoomOK" class="btn btn-default btn-danger" type='submit'
+                onclick="gogolayer('zoomOK')">Zoom to Oklahoma Floods</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="7" checked onclick = "showhidelayer(7)">
+        Washita River (Anadarko,OK)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="10" checked onclick = "showhidelayer(10)">
+        Canadian River (Norman,OK)
+      </label>
+    </div>
+
+<br>
+
+    <button name="execute" id="zoomIA" class="btn btn-default btn-danger" type='submit'
+                onclick="gogolayer('zoomIA')">Zoom to Iowa Floods</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="11" checked onclick = "showhidelayer(11)">
+        Cedar River (Vinton,IA)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="12" checked onclick = "showhidelayer(12)">
+        Iowa River (Belle Plaine,IA)
+      </label>
+    </div>
+        <div class="checkbox">
+      <label>
+        <input type="checkbox" id="13" checked onclick = "showhidelayer(13)">
+        Maquoketa River (Manchester,IA)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="14" checked onclick = "showhidelayer(14)">
+        Mississippi River (Clinton,IA)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="15" checked onclick = "showhidelayer(15)">
+        Wapsipinicon River (Independence,IA)
+      </label>
+    </div>
+
+<br>
+
+    <button name="execute" id="zoomCar" class="btn btn-default btn-danger" type='submit'
+                onclick="gogolayer('zoomCar')">Zoom to Carolina Floods</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="16" checked onclick = "showhidelayer(16)">
+        Black River (Kingstree,SC)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="17" checked onclick = "showhidelayer(17)" style="background-color: blue">
+        Lumber River (Lumberton,NC)
+      </label>
+    </div>
+{% endblock %}
+
+{% block app_content %}
+<div id="mymap" class="map"></div>
+<div id="popup" class="popup"></div>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "usfimr/base.html" %}
+
+{% block app_navigation_items %}
+<li class="active"><h5><a href="{% url 'usfimr:info' %}" style="background-color=#800000">About the App</a></h5></li>
+<li><a href="{% url 'usfimr:home' %}" style="background-color=#800000">Home</a></li>
+{% endblock %}
+
+{% block app_content %}
+
+<h1 style="color:red">App Info</h1>
+<h2>The Cohen Research App (CRA) is based off research performed by
+Dr. Sagy Cohen, Ph.D. at the University of Alabama.The U.S. Flood
+Inundation Map Repository (USFIMR) data was placed on an interactive map
+that includes flood location, date, affected area, and a video of the flood.</h2>
+<br>
+<h2>The USFIMR project goal is to provide high-resolution inundation extent
+maps of U.S. floods. The flood maps were made using satellite remote
+sensing imagery (e.g. Landsat, Sentinel-1) with ground proofing based
+on secondary sources (e.g. news report, social media).</h2>
+<br>
+<h2>The data used in this app was developed using shapefiles from the
+<a href="https://sdml.ua.edu/usfimr/">USFIMR website</a>. For guidance on using the CRA please use
+the help guide and review the technical documentation.</h2>
+
+
+
+
+{% endblock %}
+
+{% block app_actions %}
+  <a href="{% url 'usfimr:home' %}" class="btn btn-default">Back</a>
+{% endblock %}
